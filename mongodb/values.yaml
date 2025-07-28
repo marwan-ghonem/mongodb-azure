@@ -1,20 +1,45 @@
-replicaSet:
+architecture: replicaset
+replicaCount: 3
+
+auth:
   enabled: true
-  name: rs0
+  rootUser: root
+  rootPassword: $up3rP@ssw0rd 
+  username: admin
+  password: $up3rP@ssw0rd
+  database: mydatabase
 
 resources:
-  requests:
-    cpu: "2"
-    memory: "4Gi"
   limits:
-    cpu: "2"
-    memory: "4Gi"
+    cpu: 2
+    memory: 4Gi
+  requests:
+    cpu: 2
+    memory: 4Gi
 
 persistence:
-  size: 100Gi
+  enabled: true
+  size: 8Gi
 
-architecture: replicaset
+arbiter:
+  enabled: false
+
+metrics:
+  enabled: true
 
 passwordUpdateJob:
   enabled: true
+  previousPasswords:
+    rootPassword: "changeme"
 
+livenessProbe:
+  enabled: true
+readinessProbe:
+  enabled: true
+
+service:
+  type: ClusterIP
+  port: 27017
+
+image:
+  tag: 7.0.4-debian-11-r0

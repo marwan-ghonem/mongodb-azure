@@ -7,14 +7,11 @@ spec:
   project: default
   source:
     repoURL: https://github.com/marwan-ghonem/mongodb-azure.git
-    targetRevision: HEAD
-    path: mongodb/base
-    helm:
-      valueFiles:
-        - values.yaml
+    targetRevision: main
+    path: base
   destination:
     server: https://kubernetes.default.svc
-    namespace: mongodb
+    namespace: devops-prod-aks-psmdb-operator
   syncPolicy:
     automated:
       prune: true

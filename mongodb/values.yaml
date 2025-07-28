@@ -51,3 +51,11 @@ volumePermissions:
     registry: docker.io
     repository: bitnami/bitnami-shell
     tag: latest
+
+tls:
+  enabled: false
+  image:
+    registry: docker.io
+    repository: bitnami/nginx
+    tag: latest
+

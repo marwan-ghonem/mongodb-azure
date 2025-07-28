@@ -1,0 +1,16 @@
+replicaSet:
+  enabled: true
+  name: rs0
+
+resources:
+  requests:
+    cpu: "2"
+    memory: "4Gi"
+  limits:
+    cpu: "2"
+    memory: "4Gi"
+
+persistence:
+  size: 100Gi
+
+architecture: replicaset

@@ -23,18 +23,14 @@ persistence:
 
 arbiter:
   enabled: false
-
 metrics:
-  enabled: true
+  enabled: false
 
 passwordUpdateJob:
-  enabled: true
-  previousPasswords:
-    rootPassword: "changeme"
+  enabled: false
 
 livenessProbe:
   enabled: true
-
 readinessProbe:
   enabled: true
 
@@ -43,7 +39,12 @@ service:
   port: 27017
 
 image:
+  registry: docker.io
+  repository: bitnami/mongodb
   tag: 7.0.4-debian-11-r0
+
+tls:
+  enabled: false
 
 volumePermissions:
   enabled: false
@@ -51,11 +52,3 @@ volumePermissions:
     registry: docker.io
     repository: bitnami/bitnami-shell
     tag: latest
-
-tls:
-  enabled: false
-  image:
-    registry: docker.io
-    repository: bitnami/nginx
-    tag: latest
-

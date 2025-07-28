@@ -52,3 +52,7 @@ volumePermissions:
     registry: docker.io
     repository: bitnami/bitnami-shell
     tag: latest
+
+externalAccess:
+  enabled: false
+
